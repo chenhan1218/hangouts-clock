@@ -30,7 +30,6 @@ function enableClock() {
 function disableClock() {
   // Disable and release background replacement.
   clearInterval(timer);
-  textImageOverlay.setVisible(false);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   if( textImageOverlay && textImageOverlay.isDisposed() === false ) {
     textImageOverlay.dispose();
@@ -55,12 +54,8 @@ function refresh() {
   ctx.fillStyle = '#000';
   ctx.fillText(text, 0, FONT_HEIGHT);
 
-  if( textImageOverlay && textImageOverlay.isDisposed() === false ) {
-    textImageOverlay.dispose();
-  }
-  // if( textImage && textImage.isDisposed() === false ) {
-  //   textImage.dispose();
-  // }
+  var tmpTextImageOverlay = textImageOverlay;
+  var tmpTextImage = textImage;
 
   textImage = gapi.hangout.av.effects.createImageResource(canvas.toDataURL());
   textImageOverlay = textImage.createOverlay(
@@ -70,6 +65,14 @@ function refresh() {
   // Place the text x-centered
   textImageOverlay.setPosition(0, 0.45);
   textImageOverlay.setVisible(true);
+
+  // dispose old textImage and Overlay
+  if( tmpTextImageOverlay && tmpTextImageOverlay.isDisposed() === false ) {
+    tmpTextImageOverlay.dispose();
+  }
+  if( tmpTextImage && tmpTextImage.isDisposed() === false ) {
+    tmpTextImage.dispose();
+  }
 }
 
 // Kicks off app and attaches all listeners.
