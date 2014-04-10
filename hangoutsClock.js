@@ -55,9 +55,9 @@ function refresh() {
   ctx.fillStyle = '#000';
   ctx.fillText(text, 0, FONT_HEIGHT);
 
-  // if( textImageOverlay && textImageOverlay.isDisposed() === false ) {
-  //   textImageOverlay.dispose();
-  // }
+  if( textImageOverlay && textImageOverlay.isDisposed() === false ) {
+    textImageOverlay.dispose();
+  }
   // if( textImage && textImage.isDisposed() === false ) {
   //   textImage.dispose();
   // }
