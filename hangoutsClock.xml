@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *      
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License
+-->
+        <ModulePrefs title="Hangout Starter">
+                <Require feature="rpc" />
+                <Require feature="views" />
+                <Require feature="locked-domain" />
+        </ModulePrefs>
+        <Content type="html"><![CDATA[     
+
+<!-- This example uses hangoutiframer.  See
+     http://hangoutiframer.appspot.com for further details. -->
+
+<!-- Standard boilerplate to start hangouts.  Without these, your Hangout will not start. -->
+<script src="//hangoutsapi.talkgadget.google.com/talkgadget/apps/gadgets/js/rpc.js"></script>
+<script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<body style="padding: 10px">
+    
+<h3>Hangouts Clock</h3>
+
+<div id="clockControls">
+  <button id="clock">Add Clock!</button>
+  <button id="disableClock" style="display: none;">Disable clock</button>
+  <canvas width="500" height="200"></canvas>
+</div>
+
+<hr>
+
+<p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a>
+to learn more about developing Hangouts!</a></p>
+<script src="//swem.github.io/hangouts-clock/hangoutsClock.js"></script>
+]]>
+</Content>
+</Module>
