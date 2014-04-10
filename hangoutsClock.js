@@ -43,7 +43,7 @@ function disableClock() {
 }
 
 function refresh() {
-  var text = (new Date()).toString();
+  var text = moment().format();
   canvas.width  = ctx.measureText(text).width;
   ctx.font = FONT;
 
